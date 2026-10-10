@@ -47,15 +47,12 @@ def subject_wise_max():
         marks = data.loc[index, subject]
         print(subject, ":", name, "-", marks)
 
-
 # Average marks in each subject
 def subject_wise_average():
     print("\n===== SUBJECT-WISE AVERAGE MARKS =====")
-
     for subject in ['Python', 'Java', 'C++']:
         average = data[subject].mean()
         print(subject, ":", round(average, 2))
-
 
 # Lowest marks in each subject
 def subject_wise_low():
@@ -67,18 +64,15 @@ def subject_wise_low():
         marks = data.loc[index, subject]
         print(subject, ":", name, "-", marks)
 
-
 # Top-performing students
 def top_performer_students(column, number):
     top_students = data.nlargest(number, column)
     print(top_students)
 
-
 # Attendance analysis
 def attendance_analysis():
     average_attendance = data['Attendance'].mean()
     print("\nAverage Attendance:", round(average_attendance, 2))
-
     print("\nStudents Below 75% Attendance:")
     below_75 = data[data['Attendance'] < 75]
     print(below_75[['Roll_No', 'Name', 'Attendance']])
@@ -101,18 +95,14 @@ def assign_student_results():
 
     data['Grade'] = grades
     data['Pass_Fail'] = results
-
     print("\n===== STUDENT RESULTS =====")
     print(data[['Roll_No', 'Name', 'Total', 'Grade', 'Pass_Fail']])
 
 class_performance_summary()
-
 subject_wise_max()
 subject_wise_average()
 subject_wise_low()
-
 print("\n===== TOP 3 PERFORMERS =====")
 top_performer_students('Total', 3)
-
 attendance_analysis()
 assign_student_results()
