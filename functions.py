@@ -22,3 +22,10 @@ def student_grade(subject_1,subject_2,subject_3):
     elif average_marks < 35 :
         return "FAIL"
     
+def student_pass_fail(subject_1,subject_2,subject_3):
+    if subject_1 < 35 or subject_2 < 35 or subject_3 < 35 :
+        return "FAIL"
+    return "PASS"
+
+
+    
