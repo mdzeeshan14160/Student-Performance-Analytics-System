@@ -17,7 +17,7 @@ def student_grade(subject_1,subject_2,subject_3):
         return 'A'
     elif average_marks > 50:
         return 'B'
-    elif average_marks > 35:
+    elif average_marks >= 35:
         return 'C'
     elif average_marks < 35 :
         return "FAIL"
